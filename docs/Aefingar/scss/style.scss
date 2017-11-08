@@ -9,17 +9,20 @@ $fontSize: 1.3em;
 $texti: .9em;
 $fyrirsogn: "Þetta er fyrirsögn";
 $fyrirsogn2: "Þetta er líka fyrirsögn";
-$fyrirsogn3: "50% prós reiknað";
 $border: 2px $litur2 solid;
-$padding: 1em 2em;
+$padding: 1em 2em;  
 $breydd: 50em;
 $margin: 20px auto;
 $textaLitur: #b1b1b1;
 $textaLiturHover: green;
 
+*{
+    box-sizing: border-box;
+}
 body{
     background-color: $litur;
     font-size: $fontSize;
+    width:100%;
 }
 header{
     display: flex;
@@ -64,11 +67,27 @@ header{
         color:$litur3;
     }
 }   
-.box3,
-box4{
+.box-container{
+    width:100%;
+    display: flex;
+    max-width:$breydd;
+    margin:$margin;
+}
+.box3{
     @include box;
+    width: 3 / 5 * 100%;
+    margin-right:8px;
     h1:before{
-        content: $fyrirsogn3;
+        content: "3/5 = 60%";
         color:$litur2;
     }
-}   
+}
+.box4{
+    @include box;
+    width: 2 / 5 * 100%;
+    margin-left:8px;
+    h1:before{
+        content: "2/5 = 40%";
+        color:$litur2;
+    }
+}

@@ -403,9 +403,13 @@ template {
 [hidden] {
   display: none; }
 
+* {
+  box-sizing: border-box; }
+
 body {
   background-color: #818181;
-  font-size: 1.3em; }
+  font-size: 1.3em;
+  width: 100%; }
 
 header {
   display: flex;
@@ -450,23 +454,44 @@ header {
     content: "Þetta er líka fyrirsögn";
     color: #f76800; }
 
-.box3,
-box4 {
+.box-container {
+  width: 100%;
+  display: flex;
+  max-width: 50em;
+  margin: 20px auto; }
+
+.box3 {
   border: 2px blue solid;
   text-align: center;
   padding: 1em 2em;
   max-width: 50em;
-  margin: 20px auto; }
-  .box3 p,
-  box4 p {
+  margin: 20px auto;
+  width: 60%;
+  margin-right: 8px; }
+  .box3 p {
     font-size: 0.9em;
     color: #b1b1b1; }
-  .box3 p:hover,
-  box4 p:hover {
+  .box3 p:hover {
     color: green; }
-  .box3 h1:before,
-  box4 h1:before {
-    content: "50% prós reiknað";
+  .box3 h1:before {
+    content: "3/5 = 60%";
+    color: blue; }
+
+.box4 {
+  border: 2px blue solid;
+  text-align: center;
+  padding: 1em 2em;
+  max-width: 50em;
+  margin: 20px auto;
+  width: 40%;
+  margin-left: 8px; }
+  .box4 p {
+    font-size: 0.9em;
+    color: #b1b1b1; }
+  .box4 p:hover {
+    color: green; }
+  .box4 h1:before {
+    content: "2/5 = 40%";
     color: blue; }
 
 /*# sourceMappingURL=style.css.map */
