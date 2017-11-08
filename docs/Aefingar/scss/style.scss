@@ -1,22 +1,33 @@
 @charset "UTF-8";
+@import 'normalize';
 
 $litur: #818181;
 $litur2: blue;
 $fontSize: 1.3em;
+$texti: .9em;
 $fyrirsogn: "Þetta er fyrirsögn";
 $border: 2px $litur2 solid;
-$padding: 5px 0;
-
+$padding: 1em 2em;
+$breydd: 50em;
+$margin: 0 auto;
 
 body{
     background-color: $litur;
     font-size: $fontSize;
+    margin-top: 10px;
 }
 .box1{
     border: $border;
     text-align: center;
-    padding: $padding;
-}
-.box1:before{
-    content: $fyrirsogn;
+    padding: $padding; 
+    max-width: $breydd;
+    margin: $margin;
+}   
+.box1{
+    h1:before{
+        content: $fyrirsogn;
+    }
+    p{
+        font-size: $texti;
+    }
 }
