@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import 'normalize';
 
+$hausLitur:rgba(49, 170, 73, 0.71);
 $litur: #818181;
 $litur2: blue;
 $litur3: #f76800;
@@ -8,6 +9,7 @@ $fontSize: 1.3em;
 $texti: .9em;
 $fyrirsogn: "Þetta er fyrirsögn";
 $fyrirsogn2: "Þetta er líka fyrirsögn";
+$fyrirsogn3: "50% prós reiknað";
 $border: 2px $litur2 solid;
 $padding: 1em 2em;
 $breydd: 50em;
@@ -19,24 +21,40 @@ body{
     background-color: $litur;
     font-size: $fontSize;
 }
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width:$breydd;
+    margin: $margin;
+    img{
+        height: 10em;
+        padding: $padding;
+    }
+    h1{
+        color: $hausLitur;
+        text-shadow: 2px 2px #000;
+        font-size: 3em;
+    }
+}
 @mixin box{
     border: $border;
     text-align: center;
     padding: $padding; 
     max-width: $breydd;
     margin: $margin;
-}
-.box1{
-    @include box;
-    h1:before{
-        content: $fyrirsogn;
-    }
     p{
         font-size: $texti;
         color:$textaLitur;
     }
     p:hover{
         color:$textaLiturHover;
+    }
+}
+.box1{
+    @include box;
+    h1:before{
+        content: $fyrirsogn;
     }
 }   
 .box2{
@@ -45,11 +63,12 @@ body{
         content: $fyrirsogn2;
         color:$litur3;
     }
-    p{
-        font-size: $texti;
-        color:$textaLitur;
-    }
-    p:hover{
-        color:$textaLiturHover;
+}   
+.box3,
+box4{
+    @include box;
+    h1:before{
+        content: $fyrirsogn3;
+        color:$litur2;
     }
 }   
