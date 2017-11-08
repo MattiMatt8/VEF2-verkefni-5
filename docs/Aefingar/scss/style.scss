@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+$litur: #818181;
+$litur2: blue;
+$fontSize: 1.3em;
+$fyrirsogn: "Þetta er fyrirsögn";
+$border: 2px $litur2 solid;
+$padding: 5px 0;
+
+
+body{
+    background-color: $litur;
+    font-size: $fontSize;
+}
+.box1{
+    border: $border;
+    text-align: center;
+    padding: $padding;
+}
+.box1:before{
+    content: $fyrirsogn;
+}

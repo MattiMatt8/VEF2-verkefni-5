@@ -1,0 +1,14 @@
+@charset "UTF-8";
+body {
+  background-color: #818181;
+  font-size: 1.3em; }
+
+.box1 {
+  border: 2px blue solid;
+  text-align: center;
+  padding: 5px 0; }
+
+.box1:before {
+  content: "Þetta er fyrirsögn"; }
+
+/*# sourceMappingURL=style.css.map */
