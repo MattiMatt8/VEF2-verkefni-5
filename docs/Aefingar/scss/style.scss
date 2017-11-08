@@ -3,31 +3,53 @@
 
 $litur: #818181;
 $litur2: blue;
+$litur3: #f76800;
 $fontSize: 1.3em;
 $texti: .9em;
 $fyrirsogn: "Þetta er fyrirsögn";
+$fyrirsogn2: "Þetta er líka fyrirsögn";
 $border: 2px $litur2 solid;
 $padding: 1em 2em;
 $breydd: 50em;
-$margin: 0 auto;
+$margin: 20px auto;
+$textaLitur: #b1b1b1;
+$textaLiturHover: green;
 
 body{
     background-color: $litur;
     font-size: $fontSize;
-    margin-top: 10px;
 }
-.box1{
+@mixin box{
     border: $border;
     text-align: center;
     padding: $padding; 
     max-width: $breydd;
     margin: $margin;
-}   
+}
 .box1{
+    @include box;
     h1:before{
         content: $fyrirsogn;
     }
     p{
         font-size: $texti;
+        color:$textaLitur;
     }
-}
+    p:hover{
+        color:$textaLiturHover;
+    }
+}   
+.box2{
+    @include box;
+    h1:before{
+        content: $fyrirsogn2;
+        color:$litur3;
+    }
+    p{
+        font-size: $texti;
+        color:$textaLitur;
+    }
+    p:hover{
+        color:$textaLiturHover;
+    }
+}   
