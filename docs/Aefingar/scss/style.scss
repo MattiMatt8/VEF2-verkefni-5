@@ -3,18 +3,21 @@
 
 $hausLitur:rgba(49, 170, 73, 0.71);
 $litur: #818181;
-$litur2: blue;
+$litur2: navy;
 $litur3: #f76800;
 $fontSize: 1.3em;
 $texti: .9em;
 $fyrirsogn: "Þetta er fyrirsögn";
 $fyrirsogn2: "Þetta er líka fyrirsögn";
-$border: 2px $litur2 solid;
 $padding: 1em 1.5em;  
 $breydd: 50em;
 $margin: 20px auto;
 $textaLitur: #b1b1b1;
 $textaLiturHover: green;
+$borderThickness: 2px;
+$borderColor: blue;
+$borderStyle: solid;
+$border: $borderThickness $borderColor $borderStyle;
 
 *{
     box-sizing: border-box;
@@ -92,17 +95,26 @@ header{
     width: 1 / 3 * 100%;
     background-color: invert($litur3);
 }
+.box5:hover{
+    background-color: $litur3;
+}
 .box6{
     @include box;
     width: 1 / 3 * 100%;
     margin-left:8px;
     @include h1-before("lighten()", $litur2);
-    background-color: lighten($litur3,6%);
+    background-color: grey;
+}
+.box6:hover{
+    background-color: lighten(grey,7%);
 }
 .box7{
     @include box;
     @include h1-before("darken()", $litur2);
     width: 1 / 3 * 100%;
     margin-left:8px;
+    background-color: $litur3;
+}
+.box7:hover{
     background-color: darken($litur3,10%);
 }
