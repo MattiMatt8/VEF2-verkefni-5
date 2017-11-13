@@ -13,9 +13,7 @@ body {
     margin: 0 auto;
     grid-template-areas:
      "header"
-     "left"
-     "article"
-     "right"
+     "box"
      "footer"
 }
 
@@ -25,6 +23,10 @@ header {
     padding: $padding;
     margin: $margin;
     text-align: center;
+}
+.box{
+    grid-area: box;
+    width: 100%;
 }
 .left {
     grid-area: left;
@@ -48,25 +50,20 @@ footer {
 }
 
 @media only screen and (min-width: 500px)  {
-    .wrapper {
-
+    .box {
         grid-template-columns: 20% auto;
         grid-template-areas:
-        "header   header"
-        "article  article"
-        "left right"
-        "footer   footer";
+        "article article"
+        "left   right";
     }
 }
 
 @media only screen and (min-width: 600px)   {
-    .wrapper {
-  grid-gap: 20px;
+    .box {
+        grid-gap: 20px;
         grid-template-columns: 120px auto 120px;
         grid-template-areas:
-        "header  header  header"
-        "left article right"
-        "footer  footer  footer";
+        "left   article" "right";
         max-width: 600px;
     }
 }
