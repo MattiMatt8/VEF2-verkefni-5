@@ -59,17 +59,19 @@ header {
     @include texti($litur,20px);
     text-shadow: -1px 2px #000;
     justify-content: center;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     grid-template-areas:
-    "img h1";
+    "h1"
+    "img";
     img{
         width: 100px;
         grid-area: img;
-        margin-right:14px;
+        margin: 0 auto;
+        justify-content: center;
     }
     h1{
         grid-area: h1;
-        text-align: left;
+        text-align: center;
     }
 }
 .left {
@@ -89,6 +91,14 @@ footer {
     @include box;
     @include texti($litur,20px);
     font-weight: bold;
+    a{
+        text-decoration: none;
+        @include texti($textiColor, 17px);
+        margin-left: 40px;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
 }
 
 @media only screen and (min-width: 500px)  {
@@ -97,6 +107,18 @@ footer {
         grid-template-areas:
         "article article"
         "left   right";
+    }
+    header{
+        grid-template-columns: auto auto;
+        grid-template-areas:
+        "img h1";
+        img{
+            margin:0;
+            margin-right:14px;
+        }
+        h1{
+            text-align: left;
+        }
     }
 }
 
