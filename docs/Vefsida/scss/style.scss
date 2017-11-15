@@ -1,15 +1,35 @@
 @charset "UTF-8";
 @import 'normalize';
 
-$border: 3px solid #9a3939;
+$litur: #9a3939;
+$border: 3px solid $litur;
 $padding: 1em 1.5em;
 $margin: .5em 0;
+$mainColor: #888888;
+$textiColor: #b9b9b9;
+@mixin box{
+    border: $border;
+    padding: $padding;
+    color: $textiColor;
+    background-color: darken($mainColor,6%);
+    &:hover{
+        color: darken($textiColor,10%);
+    }
+}
+@mixin texti($litur,$size){
+    color: $litur;
+    font-size: $size;
+    &:hover{
+        color: darken($litur,10%);
+    }
+}
 
 *{
-    box-sizing:border-box;
+    box-sizing: border-box;
 }
 body {
-    background-color: #888888;
+    background-color: $mainColor;
+    font-family: arial;
     display: grid;
     grid-gap: 1em;
     max-width: 55em;
@@ -19,14 +39,6 @@ body {
      "header"
      "box"
      "footer"
-}
-
-header {
-    grid-area: header;
-    border: $border;
-    padding: $padding;
-    margin: $margin;
-    text-align: center;
 }
 .box{
     grid-area: box;
@@ -38,37 +50,57 @@ header {
      "article"
      "right"
 }
+header {
+    grid-area: header;
+    display: inline-grid;
+    @include box;
+    text-align: center;
+    margin-top: 20px;
+    @include texti($litur,20px);
+    text-shadow: -1px 2px #000;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+    "img h1";
+    img{
+        width: 100px;
+        grid-area: img;
+        margin-right:14px;
+    }
+    h1{
+        grid-area: h1;
+        text-align: left;
+    }
+}
 .left {
     grid-area: left;
-    border: $border;
-    padding: $padding;
+    @include box;
 }
 .right {
     grid-area: right;
-    border: $border;
-    padding: $padding;
+    @include box;
 }
 article{
     grid-area: article;
-    border: $border;
-    padding: $padding;
+    @include box;
 }
 footer {
     grid-area: footer;
-    border: $border;
-    padding: $padding;
+    @include box;
+    @include texti($litur,20px);
+    font-weight: bold;
 }
 
 @media only screen and (min-width: 500px)  {
     .box {
-        grid-template-columns: 20% auto;
+        grid-template-columns: auto auto;
         grid-template-areas:
         "article article"
         "left   right";
     }
 }
 
-@media only screen and (min-width: 600px)   {
+@media only screen and (min-width: 800px)   {
     .box {
         grid-gap: 20px;
         grid-template-columns: 25% auto 25%;
